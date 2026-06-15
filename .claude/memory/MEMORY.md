@@ -3,3 +3,4 @@
 - [Autonomy](feedback_autonomy.md) — Full autonomy over GitHub and project dir, not system settings
 - [GitHub Workflow](feedback_github_workflow.md) — Branch -> work -> commit -> PR -> never merge without approval
 - [Astro Best Practices](feedback_astro_best_practices.md) — Always use Astro-native features: <Picture />, astro:assets, src/assets for images
+- [Shared Memories](feedback_shared_memories.md) — Always commit memory files to .claude/memory/ in the repo for collaborator access
