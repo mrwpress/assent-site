@@ -28,4 +28,4 @@ pnpm-debug.log*
 # IDE
 .idea/
 .vscode/
-.claude/
+.claude/settings.local.json
