@@ -12,7 +12,7 @@ interface Props {
 }
 
 const defaultDescription = 'Professional dog training in central Colorado. Service dogs, therapy dogs, family dogs, puppies, and AKC certified training.';
-const { title, description = defaultDescription, ogImage = '/images/og-default.jpg', schema } = Astro.props;
+const { title, description = defaultDescription, ogImage = '/images/og-default.svg', schema } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
