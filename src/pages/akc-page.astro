@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="AKC Certified Training" description="American Kennel Club certified dog training in central Colorado.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>AKC Certified Training</h1>
+      <p>Comprehensive training by certified AKC Dog Trainers.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .page-hero p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+</style>

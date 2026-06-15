@@ -1,0 +1,62 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+}
+
+const { question, answer } = Astro.props;
+---
+
+<details class="faq-item">
+  <summary class="faq-question">
+    <span>{question}</span>
+    <svg class="faq-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </summary>
+  <div class="faq-answer">
+    <p>{answer}</p>
+  </div>
+</details>
+
+<style>
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 0 20px;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+</style>

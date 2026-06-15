@@ -1,0 +1,396 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FAQItem from '../components/FAQItem.astro';
+
+const services = [
+  {
+    title: 'In Home Dog Training',
+    description: 'Our In Home Training Classes are designed to help dogs and their owners overcome any specific issues and reach their training goals in the comfort of their own home. Rather than a pre-built class that focuses on a few generalized tasks, our in home training is custom tailored to your specific training needs.',
+    href: '/in-home-training',
+    image: '/images/in-home-training.jpg',
+    imageAlt: 'A cute puppy ready for their training to start at the best dog trainers in Colorado.',
+  },
+  {
+    title: 'Therapy Dog Training',
+    description: 'Our Therapy Dog Program is designed to recognize and celebrate the contributions of dogs who provide comfort and support to people in hospitals, schools, nursing homes, and other therapeutic settings.',
+    href: '/therapy-dog-course',
+    image: '/images/therapy-dog.jpg',
+    imageAlt: 'A therapy dog ready for training in Colorado.',
+  },
+  {
+    title: 'Disabled Canine Training',
+    description: 'Our program is built on the belief that with patience, understanding, and the right guidance, dogs with disabilities can thrive and enjoy a strong bond with their human companions.',
+    href: '/disabled-canine',
+    image: '/images/disabled-canine.jpg',
+    imageAlt: 'A disabled puppy ready for training at the best dog trainers in Colorado.',
+  },
+  {
+    title: 'Medical Service Dog Team Training',
+    description: 'The ACT Medical Service Dog Team Training Program is designed to help dogs and their handlers work together as a strong, confident team in everyday life. This hands-on approach creates a strong bond between the dog and handler and ensures the dog learns specific tasks tailored to the handler\'s unique medical needs.',
+    href: '/service-dog-program',
+    image: '/images/service-dog.jpg',
+    imageAlt: 'A service dog in training in Colorado.',
+  },
+  {
+    title: 'American Kennel Club Certified Training',
+    description: 'AKC Dog Training, taught by certified AKC Dog Trainers, provides a comprehensive approach to dog training that ensures a well-rounded and disciplined pet.',
+    href: '/akc-page',
+    image: '/images/akc-seal.png',
+    imageAlt: 'The American Kennel Club Seal. Certified training at the best dog training company in Colorado.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'What type of dog training programs do you offer?',
+    answer: 'We offer a variety of training programs, including basic dog obedience, Canine Good Citizen, Service Dog Training, Therapy Dog Training, and specialized programs like agility, rally, disc dog, nosework and tricks. Our certified trainers tailor each program to meet you and your dog\'s specific needs.',
+  },
+  {
+    question: 'Do you offer training for puppies?',
+    answer: 'We do offer specialized in home training options for your new puppies. Our puppy classes are designed for puppies aged 10 weeks to 24 weeks old. These classes focus on essential skills, socialization, and building a strong foundation for future training.',
+  },
+  {
+    question: 'Do you provide Medical Service Dogs?',
+    answer: 'No. We do not provide free medical service dogs. Our medical service training is designed for working teams. Specifically, disabled individuals that already own a dog and want to train the dog to perform medically assistive tasks.',
+  },
+  {
+    question: 'Does my dog have to be vaccinated?',
+    answer: 'We don\'t have any vaccination requirements for home training. We do have requirements for any dog that is preparing to enter the Therapy Dog, or Medical Service Dog Team Training Program. For puppies, we only require the distemper parvo vaccinations. For dogs old enough to receive a rabies vaccination, we require rabies and the distemper parvo vaccination. Bordetella and canine influenza are recommended, but not required.',
+  },
+  {
+    question: 'What if my dog is aggressive or bites?',
+    answer: 'If your dog displays signs of aggression or has a history of biting, we recommend scheduling a private evaluation with our certified canine behaviorists before starting any training sessions. This ensures your dog receives the specialized attention needed for safe and effective training.',
+  },
+  {
+    question: 'What is LIMA Compliant Training?',
+    answer: 'LIMA stands for Least Intrusive Minimally Aversive. LIMA is a high-level training philosophy that is focused on using the most positive and least harmful methods to achieve desired behavioral changes in animals. It prioritizes positive reinforcement and aims to avoid punishment-based techniques that could cause fear or anxiety.',
+  },
+];
+
+const accreditations = [
+  'IACP', 'IWDA', 'ABI', 'IAABC', 'APTD', 'Fear Free', 'AKC', 'NCA', 'SDVOSB', 'WOSB',
+];
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-logo-wrap">
+        <img src="/images/main-logo.png" alt="Assent Canine Training" class="hero-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="container">
+      <h1 class="intro-heading">
+        Experienced Trainers for:<br />
+        Service Dogs, Therapy Dogs, Family Dogs, Puppies, and AKC Certified Training
+      </h1>
+      <p class="intro-text">
+        Trusted by dog lovers in central Colorado, Assent provides professional training for all dogs.
+        From puppies to medical service dogs, our internationally certified canine trainers deliver
+        proven results with over 50 years of combined experience.
+      </p>
+    </div>
+  </section>
+
+  <!-- Available Training Section -->
+  <section class="services">
+    <div class="container-wide">
+      <h2 class="section-title">Available Training</h2>
+      <div class="services-grid">
+        {services.map(service => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="about-title">A Little About Us</h2>
+          <p class="about-text">
+            At Assent Canine Training, we bring years of hands-on experience and a deep commitment
+            to positive, effective dog training. Our team is made up of highly certified professional
+            trainers with backgrounds in behavior modification, obedience, and specialized canine programs.
+            Whether you're raising a puppy, working through challenging behaviors, or preparing for
+            advanced certifications, our trainers use proven, science-based methods tailored to each
+            dog and family. We're passionate about helping dogs thrive and building strong, lasting
+            bonds between pets and their people.
+          </p>
+          <a href="/about-us" class="about-link">Learn More</a>
+        </div>
+        <div class="about-image-wrap">
+          <img src="/images/colorado-map.png" alt="Assent Canine Training serves central Colorado" class="about-image" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions (FAQ)<br />About Our Dog Training</h2>
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <FAQItem question={faq.question} answer={faq.answer} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Accreditations Ticker -->
+  <section class="accreditations">
+    <h3 class="accreditations-heading">
+      Just some of the many accreditations held by our professional trainers
+    </h3>
+    <div class="ticker-wrap">
+      <div class="ticker">
+        {[...accreditations, ...accreditations].map(name => (
+          <span class="ticker-item">{name}</span>
+        ))}
+      </div>
+    </div>
+    <h3 class="accreditations-heading">
+      50 years of canine experience you can count on
+    </h3>
+  </section>
+
+  <!-- Floating CTA -->
+  <a href="/contact" class="floating-cta">
+    <span class="cta-text">Do you have questions?</span>
+    <span class="cta-hover-text">We have answers!</span>
+  </a>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero {
+    background-color: var(--color-bg-dark);
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .hero-logo-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-logo {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Intro */
+  .intro {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .intro-heading {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
+
+  .intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+
+  /* Services */
+  .services {
+    padding: 60px 0 80px;
+    background-color: var(--color-bg-light);
+  }
+
+  .section-title {
+    font-family: var(--font-ui);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+    color: var(--color-primary);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 32px;
+  }
+
+  /* About */
+  .about {
+    padding: 80px 0;
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    color: var(--color-accent);
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 32px;
+  }
+
+  .about-link {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    padding: 12px 28px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  .about-link:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg-dark);
+  }
+
+  .about-image {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 80px 0;
+  }
+
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* Accreditations */
+  .accreditations {
+    padding: 60px 0;
+    background-color: var(--color-bg-light);
+    overflow: hidden;
+  }
+
+  .accreditations-heading {
+    font-family: var(--font-ui);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-primary);
+    padding: 0 20px;
+  }
+
+  .ticker-wrap {
+    overflow: hidden;
+    padding: 40px 0;
+  }
+
+  .ticker {
+    display: flex;
+    gap: 48px;
+    animation: ticker 30s linear infinite;
+    width: max-content;
+  }
+
+  .ticker-item {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    padding: 8px 24px;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Floating CTA */
+  .floating-cta {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(200, 169, 81, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 999;
+    overflow: hidden;
+  }
+
+  .floating-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(200, 169, 81, 0.5);
+  }
+
+  .cta-hover-text {
+    display: none;
+  }
+
+  .floating-cta:hover .cta-text {
+    display: none;
+  }
+
+  .floating-cta:hover .cta-hover-text {
+    display: inline;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .intro-heading {
+      font-size: 1.3rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .floating-cta {
+      bottom: 16px;
+      right: 16px;
+      padding: 12px 20px;
+      font-size: 0.8rem;
+    }
+  }
+</style>

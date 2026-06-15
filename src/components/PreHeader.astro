@@ -1,0 +1,66 @@
+---
+---
+
+<div class="pre-header">
+  <div class="container">
+    <div class="pre-header-grid">
+      <div class="pre-header-cta">Contact one of our trainers today.</div>
+      <div class="pre-header-contact">
+        <span>Senior Trainer</span>
+        <a href="tel:7203775797">720-377-5797</a>
+      </div>
+      <div class="pre-header-contact">
+        <span>Lead Behaviorist</span>
+        <a href="tel:3036417421">303-641-7421</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .pre-header {
+    background-color: var(--color-bg-dark);
+    color: var(--color-white);
+    padding: 8px 0;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+  }
+
+  .pre-header-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .pre-header-cta {
+    font-weight: 500;
+  }
+
+  .pre-header-contact {
+    text-align: right;
+  }
+
+  .pre-header-contact span {
+    display: block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .pre-header-contact a {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 768px) {
+    .pre-header-grid {
+      flex-direction: column;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .pre-header-contact {
+      text-align: center;
+    }
+  }
+</style>
