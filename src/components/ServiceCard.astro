@@ -1,9 +1,12 @@
 ---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   title: string;
   description: string;
   href: string;
-  image?: string;
+  image?: ImageMetadata;
   imageAlt?: string;
 }
 
@@ -13,7 +16,15 @@ const { title, description, href, image, imageAlt = '' } = Astro.props;
 <div class="service-card">
   {image && (
     <div class="service-card-image-wrap">
-      <img src={image} alt={imageAlt} class="service-card-image" loading="lazy" />
+      <Picture
+        src={image}
+        formats={['avif', 'webp']}
+        alt={imageAlt}
+        class="service-card-image"
+        loading="lazy"
+        width={600}
+        height={400}
+      />
     </div>
   )}
   <div class="service-card-body">

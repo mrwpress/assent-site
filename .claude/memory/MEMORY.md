@@ -1,0 +1,5 @@
+- [Project Overview](project_overview.md) — Astro + Cloudflare Pages rebuild of assentcaninetraining.com, no CMS, repo mrwpress/assent-site
+- [GitHub Account](user_github.md) — User's GitHub account is mrwpress
+- [Autonomy](feedback_autonomy.md) — Full autonomy over GitHub and project dir, not system settings
+- [GitHub Workflow](feedback_github_workflow.md) — Branch -> work -> commit -> PR -> never merge without approval
+- [Astro Best Practices](feedback_astro_best_practices.md) — Always use Astro-native features: <Picture />, astro:assets, src/assets for images

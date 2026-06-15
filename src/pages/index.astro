@@ -2,41 +2,50 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import FAQItem from '../components/FAQItem.astro';
+import { Picture } from 'astro:assets';
+
+import mainLogo from '../assets/images/main-logo.svg';
+import coloradoMap from '../assets/images/colorado-map.svg';
+import imgInHome from '../assets/images/in-home-training.svg';
+import imgTherapy from '../assets/images/therapy-dog.svg';
+import imgDisabled from '../assets/images/disabled-canine.svg';
+import imgService from '../assets/images/service-dog.svg';
+import imgAkc from '../assets/images/akc-seal.svg';
 
 const services = [
   {
     title: 'In Home Dog Training',
     description: 'Our In Home Training Classes are designed to help dogs and their owners overcome any specific issues and reach their training goals in the comfort of their own home. Rather than a pre-built class that focuses on a few generalized tasks, our in home training is custom tailored to your specific training needs.',
     href: '/in-home-training',
-    image: '/images/in-home-training.jpg',
+    image: imgInHome,
     imageAlt: 'A cute puppy ready for their training to start at the best dog trainers in Colorado.',
   },
   {
     title: 'Therapy Dog Training',
     description: 'Our Therapy Dog Program is designed to recognize and celebrate the contributions of dogs who provide comfort and support to people in hospitals, schools, nursing homes, and other therapeutic settings.',
     href: '/therapy-dog-course',
-    image: '/images/therapy-dog.jpg',
+    image: imgTherapy,
     imageAlt: 'A therapy dog ready for training in Colorado.',
   },
   {
     title: 'Disabled Canine Training',
     description: 'Our program is built on the belief that with patience, understanding, and the right guidance, dogs with disabilities can thrive and enjoy a strong bond with their human companions.',
     href: '/disabled-canine',
-    image: '/images/disabled-canine.jpg',
+    image: imgDisabled,
     imageAlt: 'A disabled puppy ready for training at the best dog trainers in Colorado.',
   },
   {
     title: 'Medical Service Dog Team Training',
     description: 'The ACT Medical Service Dog Team Training Program is designed to help dogs and their handlers work together as a strong, confident team in everyday life. This hands-on approach creates a strong bond between the dog and handler and ensures the dog learns specific tasks tailored to the handler\'s unique medical needs.',
     href: '/service-dog-program',
-    image: '/images/service-dog.jpg',
+    image: imgService,
     imageAlt: 'A service dog in training in Colorado.',
   },
   {
     title: 'American Kennel Club Certified Training',
     description: 'AKC Dog Training, taught by certified AKC Dog Trainers, provides a comprehensive approach to dog training that ensures a well-rounded and disciplined pet.',
     href: '/akc-page',
-    image: '/images/akc-seal.png',
+    image: imgAkc,
     imageAlt: 'The American Kennel Club Seal. Certified training at the best dog training company in Colorado.',
   },
 ];
@@ -91,7 +100,7 @@ const faqSchema = {
   <section class="hero">
     <div class="container">
       <div class="hero-logo-wrap">
-        <img src="/images/main-logo.png" alt="Assent Canine Training" class="hero-logo" />
+        <Picture src={mainLogo} formats={['avif', 'webp']} alt="Assent Canine Training" class="hero-logo" width={800} height={300} />
       </div>
     </div>
   </section>
@@ -141,7 +150,7 @@ const faqSchema = {
           <a href="/about-us" class="about-link">Learn More</a>
         </div>
         <div class="about-image-wrap">
-          <img src="/images/colorado-map.png" alt="Assent Canine Training serves central Colorado" class="about-image" loading="lazy" />
+          <Picture src={coloradoMap} formats={['avif', 'webp']} alt="Assent Canine Training serves central Colorado" class="about-image" loading="lazy" width={600} height={500} />
         </div>
       </div>
     </div>
