@@ -71,9 +71,22 @@ const faqs = [
 const accreditations = [
   'IACP', 'IWDA', 'ABI', 'IAABC', 'APTD', 'Fear Free', 'AKC', 'NCA', 'SDVOSB', 'WOSB',
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Home" schema={faqSchema}>
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -138,7 +151,7 @@ const accreditations = [
   <section class="faq">
     <div class="container">
       <h2 class="section-title">Frequently Asked Questions (FAQ)<br />About Our Dog Training</h2>
-      <div class="faq-list">
+      <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
         {faqs.map(faq => (
           <FAQItem question={faq.question} answer={faq.answer} />
         ))}
